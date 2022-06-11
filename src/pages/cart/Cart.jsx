@@ -55,7 +55,7 @@ function Cart() {
 	}
 	function handleProductClick(product) { //navigate user on click
 		const path = product.id;
-		navigate("/toolspros/shop/"+path);
+		navigate("/tools/shop/"+path);
 	}
 	
 	if (isEmpty) return <>
@@ -96,7 +96,7 @@ function Cart() {
 					<p>Total</p>
 					<p>${summary.total}</p>
 				</div>
-				<Link to="/toolspros/checkout">
+				<Link to="/tools/checkout">
 					<button className={styles.toCheckout}>Proceed To Checkout</button>
 				</Link>
 			</div>

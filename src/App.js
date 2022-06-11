@@ -46,40 +46,40 @@ function App() {
 				<Router>
 					<Routes>
 							
-						<Route exact path="/" element={
+						<Route exact path="tools/" element={
 							<LandingPageLayout /> 
 						} />
-						<Route exact path="/toolspros" element={ //for gh pages
+						<Route exact path="/tools" element={ //for gh pages
 							<LandingPageLayout /> 
 						} />
 
-						<Route exact path="/toolspros/shop" element={
+						<Route exact path="/tools/shop" element={
 							<ShopPageLayout />
 						} />
 
-						<Route path="/toolspros/shop/:id" element={
+						<Route path="/tools/shop/:id" element={
 							<ProductPageLayout />
 						} />
 
-						<Route exact path="/toolspros/admin" element={
+						<Route exact path="/tools/admin" element={
 							<AdminPageLayout />
 						} />
-						<Route exact path="/toolspros/cart" element={
+						<Route exact path="/tools/cart" element={
 							<Cart />
 						} />
-						<Route exact path="/toolspros/auth" element={
+						<Route exact path="/tools/auth" element={
 							<Auth />
 						} />
-						<Route exact path="/toolspros/account" element={
+						<Route exact path="/tools/account" element={
 							<AccountPage />
 						} />
-						<Route exact path="/toolspros/checkout" element={
+						<Route exact path="/tools/checkout" element={
 							<CheckoutPage />
 						} />
-						<Route exact path="/toolspros/contact" element={
+						<Route exact path="/tools/contact" element={
 							<ContactPage />
 						} />
-						<Route exact path="/toolspros/about" element={
+						<Route exact path="/tools/about" element={
 							<About />
 						} />
 					</Routes>

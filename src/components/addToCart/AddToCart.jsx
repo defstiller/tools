@@ -19,7 +19,7 @@ function AddToCart(props) {
 						<button onClick={() => handleQuantityChange(true, productInCart, updateItemQuantity)}>+</button>
 					</div>
 					<div className={styles.link}>
-						<Link to="/toolspros/cart">
+						<Link to="/tools/cart">
 							<button className={styles.cartBtn} disabled={loading}>Go to cart</button>
 						</Link>
 					</div>

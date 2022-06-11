@@ -10,19 +10,19 @@ function NavBar(props) {
 		<nav>
 			<ul className={styles.NavBar}>
 				<li>
-					<NavLink to="/toolspros/shop">
+					<NavLink to="/tools/shop">
 						Shop
 					</NavLink>
 				</li>
 
 				<li>
-					<NavLink to="/toolspros/about">
+					<NavLink to="/tools/about">
 						About
 					</NavLink>
 				</li>
 				
 				<li>
-					<NavLink to="/toolspros/contact">
+					<NavLink to="/tools/contact">
 						Contact
 					</NavLink>
 				</li>
