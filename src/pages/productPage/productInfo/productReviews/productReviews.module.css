@@ -1,0 +1,32 @@
+.reviewArticle > p {
+	margin-left: 4vw;
+}
+.reviewDiv {
+	display: grid;
+	grid-template: 1fr / 1fr 5fr;
+	padding: 2vh 4vw;
+	margin-top: 0;
+	margin-bottom: 4vh;
+	background: linear-gradient(rgb(152, 165, 152),rgb(133, 133, 133)) bottom /60% 1px;
+  	background-repeat: no-repeat;
+}
+.commentDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.commentDiv p {
+	word-break: break-all;
+}
+.reviewFormDiv{
+	margin-left: 1vw;
+
+}
+.comment {
+	height: 10vh;
+	margin-top: 1vh;
+	width: 40%;
+}
+.reviewForm button {
+	margin-top: 0.5vh;
+}
