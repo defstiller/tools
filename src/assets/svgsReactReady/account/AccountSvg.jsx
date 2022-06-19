@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
-
+import styles from "./accountSvg.module.css";
 const AccountSvg = (props) => {
-	const {styles} = props;
 	return (
 		<button className={styles.svgButton}>
 			<svg className={styles.svgIcon} viewBox="0 0 20 20" {...props}>
@@ -10,8 +8,5 @@ const AccountSvg = (props) => {
 			</svg>
 		</button>
 	);
-};
-AccountSvg.propTypes = {
-	styles: PropTypes.any
 };
 export default AccountSvg;

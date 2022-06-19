@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
+import styles from "./cartButtonSvg.module.css";
 const CartButtonSvg = (props) => {
-	const {styles} = props
 	return (
 		<button className={styles.svgButton}>
 			<svg className={styles.svgIcon} viewBox="0 0 20 20" {...props}>
@@ -13,9 +12,6 @@ const CartButtonSvg = (props) => {
 		</button>
 
 	)
-};
-CartButtonSvg.propTypes = {
-	styles: PropTypes.any
 };
   
 export default CartButtonSvg;
