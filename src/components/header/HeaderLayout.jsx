@@ -30,24 +30,32 @@ function HeaderLayout() {
 	
 	return <div className={styles.headerDiv}>
 		<header className={styles.header}>
-			<Link to="/tools/" >
-				<LogoSvg />
+			<Link 
+				to="/tools/" 
+				aria-label="home" 
+			>
+				<LogoSvg alt="logo"/>
 			</Link>
 			{width > 575 && <NavBar styles={styles}/>}
-			<Link to="/tools/cart">
-				<CartButtonSvg styles={styles}/>
+			<Link 
+				to="/tools/cart" 
+				aria-label="cart" 
+			>
+				<CartButtonSvg alt="cart button"/>
 			</Link>
 			<AccountSvg 
-				styles={styles} 
 				onClick={() => setDropdown(true)}
+				role="button" 
+				aria-label="dropdown"
 			/>
 		</header>
 		{dropDown && (
 			<div 
 				className={styles.dropDown}  
 				ref={dropDownDiv} 
+				data-testid="header-dropdown"
 			>
-				<DropDown width={width}/>
+				<DropDown width={width} styles={styles}/>
 			</div>
 		)}
 	</div>;
