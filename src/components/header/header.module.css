@@ -8,7 +8,7 @@
 }
 .header {
 	display: grid;
-	grid-template: 1fr/ 1fr 85% 1fr 1fr;
+	grid-template: 1fr/ 10% 80% 5% 5%;
 	justify-items: center;
 	align-items: center;
 	background-color: rgba(168, 255, 117, 0.76);
