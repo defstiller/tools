@@ -6,8 +6,8 @@ function LoadingModal(props) {
 	const {loading} = props;
 	if(loading) {
 		return (
-			<main>
-				<LoadingSvg />
+			<main >
+				<LoadingSvg alt="loading"/>
 			</main>
 		);
 	}
