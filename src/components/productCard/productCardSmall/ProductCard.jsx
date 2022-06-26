@@ -1,24 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useCart } from "react-use-cart";
-// import classes from "./productCardSmall.module.css";
 
 import AddToCart from "../../addToCart/AddToCart";
 import ImageWithFallback from "../../imageWithFallback/ImageWithFallback";
 
 function ProductCard(props) {
 	const {product, handleProductClick, styles, loading} = props;
-	const { addItem, inCart, getItem, updateItemQuantity } = useCart();
-	const productInCart = getItem(product.id);
 	return(
 		<article className={styles.cardArticle}>
 			<figure>
 				<ImageWithFallback src={product.imgUrl} alt={product.name} onClick={() => handleProductClick(product)} className={styles.productImg}/>
 			</figure>
 			<div className={styles.infoDiv}>
-				<p>{product.name}</p>
-				<p>Price: ${product.price}</p>
-				<p>
+				<p aria-label="name">{product.name}</p>
+				<p aria-label="price">Price: ${product.price}</p>
+				<p aria-label="shipping">
 					Shipping: {product.shipping > 0 
 						? "$"+product.shipping 
 						: "FREE"}
