@@ -72,6 +72,7 @@
 	height: 1.5rem;
 	border: 1px solid rgba(0, 0, 0, 0.356);
 	border-radius: 5px;
+	background-color: rgba(152, 165, 153, 0.158);
 }
 .link {
 	width: 100%;
@@ -95,6 +96,7 @@
 	height: 2rem;
 	border: 1px solid rgba(0, 0, 0, 0.356);
 	border-radius: 10px;
+	background-color: rgba(152, 165, 153, 0.158);
 }
 .addToCartMenu {
 	display: flex;
@@ -102,6 +104,7 @@
 }
 .addToCartMenu > button {
 	margin-top: 2rem;
+	background-color: rgba(152, 165, 153, 0.158);
 }
 .addToCartMenu > button:hover,
 .changeAmountBtns > button:hover,
