@@ -70,19 +70,31 @@
 	margin: 0.5vh 0;
 	width: 1.5rem;
 	height: 1.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.356);
+	border-radius: 5px;
 }
 .link {
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
 }
 .link > a {
 	display: flex;
 	justify-content: center;
-	width: 100%;
+	align-items: center;
 	text-decoration: none;
+	width: 60%;
+	height: 2rem;
+	border: 1px solid rgba(0, 0, 0, 0.356);
+	border-radius: 10px;
 }
 .cartBtn {
 	width: 60%;
 	height: 2rem;
+	border: 1px solid rgba(0, 0, 0, 0.356);
+	border-radius: 10px;
 }
 .addToCartMenu {
 	display: flex;
@@ -90,7 +102,6 @@
 }
 .addToCartMenu > button {
 	margin-top: 2rem;
-	height: 2rem;
 }
 .addToCartMenu > button:hover,
 .changeAmountBtns > button:hover,
