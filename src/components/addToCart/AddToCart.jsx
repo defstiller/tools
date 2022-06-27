@@ -15,18 +15,18 @@ function AddToCart(props) {
 				? <menu>
 					<div className={styles.changeAmountBtns} data-testid="changeAmountDiv">
 						<button onClick={() => handleQuantityChange(false, productInCart, updateItemQuantity)}>-</button>
-						<p>{productInCart.quantity}</p>
+						<p data-testid="quantity">{productInCart.quantity}</p>
 						<button onClick={() => handleQuantityChange(true, productInCart, updateItemQuantity)}>+</button>
 					</div>
 					<div className={styles.link}>
-						<Link to="/tools/cart">
-							<button className={styles.cartBtn} disabled={loading}>Go to cart</button>
+						<Link to="/tools/cart" type="button" className={styles.cartBtn} disabled={loading}>
+							Go to cart
 						</Link>
 					</div>
 				</menu>
 				: 
 				<menu className={styles.addToCartMenu} data-testid="addToCartMenu">
-					<button onClick={() => addItem(product, 1)} disabled={loading}>
+					<button onClick={() => addItem(product, 1)} disabled={loading} className={styles.cartBtn}>
 						Add to cart
 					</button>
 				</menu>
