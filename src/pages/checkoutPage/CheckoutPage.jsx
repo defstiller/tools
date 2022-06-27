@@ -39,6 +39,7 @@ function CheckoutPage() {
 				</li>
 			))}
 		</ul>
+		<h3>For buyer account use <br/> email: asaturov0-buyer@gmail.com <br/> password: buyertest</h3>
 		<PayPal subtotal={subtotal} description="Order from ToolsPros" styles={styles}/>
 	</main>;
 }
