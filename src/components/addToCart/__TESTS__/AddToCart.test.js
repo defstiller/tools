@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import AddToCart from "../AddToCart";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter as Router } from "react-router-dom";
@@ -10,7 +10,7 @@ const product = {
 	imgUrl: "test image",
 	price: 555,
 	shipping: 1000,
-	id: 55
+	id: 444
 }; 
 const styles = [];
 
@@ -18,7 +18,7 @@ describe("Add to cart returns correct elements, product is not in cart", () => {
 	let addToCartDiv;
 	let addToCartMenu;
 	beforeEach(() => {
-		render(
+		render( 
 			<Router>
 				<CartProvider>
 					<AddToCart product={product} styles={styles}/>
@@ -42,8 +42,12 @@ describe("Add to cart returns correct elements, product is not in cart", () => {
 	});
 	
 }); 
+describe("Change quantity", () => { 
+	let addToCart;
+	let decrease;
+	let increase;
+	let quantity;
 
-describe("Add to cart returns correct elements, product is added to cart", () => { 
 	beforeEach(() => {
 		render(
 			<Router>
@@ -52,43 +56,44 @@ describe("Add to cart returns correct elements, product is added to cart", () =>
 				</CartProvider> 
 			</Router>
 		);
-		const button = screen.getByRole("button", {
+		addToCart = screen.queryByRole("button", {
 			name: /Add to cart/i
 		});
-		userEvent.click(button);
 
 	});
 	afterEach(() => {
-		const button = screen.getByRole("button", {
-			name: /-/i 
-		});
-		userEvent.click(button);
+		cleanup();
 	});
-	test("Decrease button is present", () => {
-		const button = screen.getByRole("button", {
-			name: /-/i 
+	test("Decrease button removes item and returns back add to cart button", () => {
+		userEvent.click(addToCart);
+		decrease = screen.getByRole("button", { 
+			name: /-/i  
+		}); 
+		userEvent.click(decrease);
+		addToCart = screen.queryByRole("button", {
+			name: /Add to cart/i
 		});
-		expect(button).toBeInTheDocument();
-		expect(button).toBeVisible();  
+		expect(addToCart).toBeInTheDocument();
 	}); 
-	test("Increase button is present", () => {
-		const button = screen.getByRole("button", {
+	test("Increase button adds item quantity", () => {
+		userEvent.click(addToCart);
+		increase = screen.getByRole("button", { 
 			name: /\+/i
-		});
-		expect(button).toBeInTheDocument();
-		expect(button).toBeVisible();  
+		}); 
+		quantity = screen.getByTestId("quantity");
+		expect(quantity).toHaveTextContent(1);
+		userEvent.click(increase);
+		expect(quantity).toHaveTextContent(2);
 	});
-	test("Go to cart button is present", () => { 
-		const button = screen.getByRole("button", {
-			name: /Go to cart/i
-		});
-		expect(button).toBeInTheDocument();  
-		expect(button).toBeVisible();  
-	});
-	test("Go to cart button has correct attributes", () => { 
-		const link = screen.getByRole("link");
-		expect(link).toHaveAttribute("href", "/tools/cart"); 
-	});
+	test("Decrease reduces item quantity back from 2", () => {
+		decrease = screen.getByRole("button", { 
+			name: /-/i 
+		}); 
+		expect(quantity).toHaveTextContent(2);
+		userEvent.click(decrease);
+		userEvent.click(decrease);
+		expect(quantity).not.toBeInTheDocument();  
+	}); 
 
 	
-}); 
+});
