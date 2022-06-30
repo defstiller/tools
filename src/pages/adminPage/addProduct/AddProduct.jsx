@@ -12,7 +12,7 @@ function AddProduct() {
 	const [input, setInput] = useState({
 		name: "",
 		description: "",
-		category: "", ////// CREATE CATEGORY LIST 
+		category: "",
 		subCategory: "",
 		isFeatured: false,
 		price: "",
@@ -39,28 +39,28 @@ function AddProduct() {
 			<LoadingModal loading={loading} />
 			<form onSubmit={handleAddSubmit} className={styles.form}>
 				<label htmlFor="name">Name</label>
-				<input name="name" value={input.name} onChange={handleInputChange} required/> 
+				<input placeholder="Name" name="name" value={input.name} onChange={handleInputChange} required/> 
 
 				<label htmlFor="description">Description</label>
-				<input name="description" value={input.description} onChange={handleInputChange} required/>
+				<textarea name="description" placeholder="Description" value={input.description} onChange={handleInputChange} required/>
 
 				<label htmlFor="category">Category</label>
-				<input name="category" value={input.category} onChange={handleInputChange} required/>
+				<input name="category" placeholder="Category" value={input.category} onChange={handleInputChange} required/>
 
 				<label htmlFor="category">sub-Category</label>
-				<input name="subCategory" value={input.subCategory} onChange={handleInputChange}/>
+				<input name="subCategory" placeholder="Sub Category" value={input.subCategory} onChange={handleInputChange}/>
 
 				<label htmlFor="isFeatured">Is Featured?</label>
 				<input name="isFeatured" value={input.isFeatured} type="checkBox" onChange={handleInputChange}/>
 
 				<label htmlFor="price">Price</label>
-				<input name="price" value={input.price} onChange={handleInputChange} required/>
+				<input name="price" placeholder="Price" type="number" value={input.price} onChange={handleInputChange} required/>
 
 				<label htmlFor="shipping">Shipping Price</label>
-				<input name="shipping" value={input.shipping} onChange={handleInputChange} required/>
+				<input name="shipping" placeholder="Shipping" type="number" value={input.shipping} onChange={handleInputChange} required/>
 
 				<label htmlFor="imgUrl">Image URL</label>
-				<input name="imgUrl" value={input.imgUrl} onChange={handleInputChange} required/>
+				<input name="imgUrl" placeholder="Image URL" value={input.imgUrl} onChange={handleInputChange} required/>
 
 				<button type="submit">Submit</button>
 			</form>
