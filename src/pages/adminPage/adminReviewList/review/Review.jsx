@@ -7,11 +7,11 @@ function Review(props) {
 	const {leftByEmail, comment, dateReviewLeft, rating, docId} = review;
 	return (
 		<article className={styles.reviewArticle}>
-			<p>Email: {leftByEmail}</p>
-			<p>Comment: {comment}</p>
-			<p>Date: {dateReviewLeft}</p>
-			<p>Rating: {rating}</p>
-			<p>DocID: {docId}</p>
+			<p data-testid="email">Email: {leftByEmail || "unknown"}</p>
+			<p data-testid="comment">Comment: {comment || "no comment"}</p>
+			<p data-testid="date">Date: {dateReviewLeft || "unknown"}</p>
+			<p data-testid="rating">Rating: {rating || "no rating"}</p>
+			<p data-testid="doc id">DocID: {docId}</p>
 			<button onClick={() => removeData("reviews", docId)} disabled={loading}>Remove review from data base</button>
 		</article>
 	);
