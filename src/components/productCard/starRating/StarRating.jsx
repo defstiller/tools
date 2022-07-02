@@ -37,7 +37,7 @@ function StarRating(props){
 	);
 }
 StarRating.propTypes = {
-	rating: PropTypes.number,
+	rating: PropTypes.any,
 	width: PropTypes.any
 };
 
