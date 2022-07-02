@@ -18,12 +18,12 @@ function AdminPageLayout() {
 			<button onClick={event => handleAdminPageLayout(event)} name="addProduct">Add Product</button>
 			<button onClick={event => handleAdminPageLayout(event)} name="productList">Product list</button>
 			<button onClick={event => handleAdminPageLayout(event)} name="userMessages">User messages</button>
-			<button onClick={event => handleAdminPageLayout(event)} name="clear">Reviews</button>
+			<button onClick={event => handleAdminPageLayout(event)} name="userReviews">Reviews</button>
 		</section>
 		{adminPage === "addProduct" && <AddProduct /> }
 		{adminPage === "productList" &&<AdminProductList /> }
 		{adminPage === "userMessages" && <GetUserMessages /> }
-		{adminPage === "userMessages" && <AdminReviewList /> }
+		{adminPage === "userReviews" && <AdminReviewList /> }
 	</>
 	);
 }
