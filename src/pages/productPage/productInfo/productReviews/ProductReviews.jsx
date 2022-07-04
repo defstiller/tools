@@ -1,27 +1,26 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState, useRef, useContext } from "react";
 import PropTypes from "prop-types";
 
 import StarRating from "../../../../components/productCard/starRating/StarRating";
 import ReviewForm from "./reviewForm/ReviewForm";
 import LoadingModal from "../../../../components/modal/loadingModal/LoadingModal";
+import Modal from "../../../../components/modal/Modal";
 
 import useAddGetRemoveData from "../../../../logic/firebaseLogic/firebaseDB/useAddGetRemoveData";
 import useHandleInputChange from "../../../../logic/functions/useHandleInputChange";
-
-import { getAuth } from "firebase/auth";
+import { AuthContext} from "../../../../context/context";
 
 import styles from "./productReviews.module.css";
 function ProductReviews(props) {
+	const {auth} = useContext(AuthContext);
 	const [userData, setUserData] = useState({
 		userId: null,
 		userEmail: null
 	});
-	const auth = getAuth();
-	const user = auth.currentUser;
 	useEffect(() => {
-		if(user) {
-			const userId = user.uid;
-			const userEmail = user.email;
+		if(auth.currentUser) {
+			const userId = auth.currentUser.uid;
+			const userEmail = auth.currentUser.email;
 			setUserData({
 				userId,
 				userEmail
@@ -33,12 +32,11 @@ function ProductReviews(props) {
 		ratings: []
 	});
 	const {productDocId, setAverageRating} = props;
-	const {loading, error,response ,receivedData, addData, getData} = useAddGetRemoveData();
+	const {loading, error, response, receivedData, addData, getData} = useAddGetRemoveData();
 	const {objectInput, input} = useHandleInputChange();
 	const [reviews, setReviews] = useState([]);
 	function handleReviewSubmit(event) {
 		event.preventDefault();
-		const reviewsDataIdLength = receivedData.length + 1;
 		const currentDate = new Date();
 		const options = { year: "numeric", month: "long", day: "numeric" };
 		const currentDateToPost = currentDate.toLocaleDateString("en-us",options);
@@ -46,7 +44,6 @@ function ProductReviews(props) {
 			comment: input.comment,
 			rating: input.rating,
 			productDocId: productDocId,
-			id: reviewsDataIdLength,
 			leftByUid: userData.userId,
 			leftByEmail: userData.userEmail,
 			dateReviewLeft: currentDateToPost
@@ -82,6 +79,7 @@ function ProductReviews(props) {
 	return (
 		<div>
 			<LoadingModal loading={loading} />
+			<Modal response={response} error={error} />
 			<article className={styles.reviewArticle}>
 				{reviews.length ? <p>REVIEWS</p> : <p>No reviews found</p>}
 				{reviews && reviews.map(review => {
@@ -100,7 +98,7 @@ function ProductReviews(props) {
 				})
 				}
 			</article>
-			{user && 
+			{userData.userId && 
 			<ReviewForm 
 				handleReviewSubmit={handleReviewSubmit} 
 				input={input} 
