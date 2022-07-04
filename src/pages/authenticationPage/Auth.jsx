@@ -67,6 +67,7 @@ function Auth() {
 					<input 
 						placeholder="email" 
 						name="email" 
+						type="email"
 						value={authInfo.email} 
 						autoComplete="username"
 						onChange={handleChange}/>
@@ -84,7 +85,7 @@ function Auth() {
 					:
 					<button onClick={() => setIsRegister(true)}>Register Instead</button>
 				}
-				<p>For admin account use <br/>email: admin@gmail.com <br/> password: easyAdmin123</p>
+				<p data-testid="adminInfo">For admin account use <br/>email: admin@gmail.com <br/> password: easyAdmin123</p>
 			</div>
 		</main>
 	</>
