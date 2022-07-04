@@ -45,9 +45,9 @@ function ContactPage() {
 				<h1>Would you like to contact us?</h1>
 				<p>This form is for messages in admin section</p>
 				<form disabled={loading} onSubmit={handleSubmit}>
-					<input placeholder="email" type="text" onChange={objectInput} name="email" required/>
-					<input placeholder="name" type="text" onChange={objectInput} name="name" required/>
-					<input placeholder="subject" type="text" onChange={objectInput} name="subject" required/>
+					<input placeholder="Email" type="email" onChange={objectInput} name="email" required/>
+					<input placeholder="Name" type="text" onChange={objectInput} name="name" pattern="[a-zA-Z'-'\s]*" required />
+					<input placeholder="Subject" type="text" onChange={objectInput} name="subject" required/>
 					<textarea placeholder="Message" type="text" onChange={objectInput} name="message" required/>
 					<button type="submit">Submit</button>
 				</form>
