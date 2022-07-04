@@ -7,7 +7,7 @@ function ReviewForm(props) {
 		return (
 			<aside className={styles.reviewFormDiv}>
 				<p>Leave a review</p>
-				<form onSubmit={handleReviewSubmit} className={styles.reviewForm}>
+				<form onSubmit={handleReviewSubmit} className={styles.reviewForm} data-testid="reviewForm">
 					<input 
 						placeholder="rating" 
 						type="number" 

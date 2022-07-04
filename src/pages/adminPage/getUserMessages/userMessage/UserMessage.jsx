@@ -7,10 +7,10 @@ function UserMessage(props) {
 	const {email, name, subject, message, docId} = userMessage;
 	return (
 		<article className={styles.messageArticle}>
-			<p>Email: {email}</p>
-			<p>Name: {name}</p>
-			<p>Subject: {subject}</p>
-			<p>Message: {message}</p>
+			<p data-testid="email">Email: {email || "email is missing, check form validation"}</p>
+			<p data-testid="name">Name: {name || "name is missing, check form validation"}</p>
+			<p data-testid="subject">Subject: {subject || "subject is missing, check form validation"}</p>
+			<p data-testid="message">Message: {message || "message is missing, check form validation"}</p>
 			<button onClick={() => removeData("messages", docId)} disabled={loading}>Remove message from data base</button>
 		</article>
 	)
