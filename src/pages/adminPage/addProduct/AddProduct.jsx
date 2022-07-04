@@ -34,7 +34,7 @@ function AddProduct() {
 	}
 
 	return(
-		<div className={styles.addProductDiv}>
+		<div className={styles.addProductDiv} data-testid="addProduct">
 			<Modal response={response} delay={2000} error={error} setResponse={setResponse} setError={setError}/>
 			<LoadingModal loading={loading} />
 			<form onSubmit={handleAddSubmit} className={styles.form}>

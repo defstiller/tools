@@ -16,7 +16,7 @@ function GetProduct() {
 	}, []);
 
 	return(
-		<div className={styles.getProductDiv}>
+		<div className={styles.getProductDiv} data-testid="productList">
 			<LoadingModal loading={loading}/>
 			<Modal response={response} delay={2000} error={error} setResponse={setResponse} setError={setError}/>
 

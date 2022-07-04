@@ -15,7 +15,7 @@ function AdminReviewList() {
 		getData("reviews");
 	}, []);
 	return (
-		<div className={styles.reviewsDiv}>
+		<div className={styles.reviewsDiv} data-testid="userReviews">
 			<LoadingModal loading={loading}/>
 			<Modal response={response} delay={2000} error={error} setResponse={setResponse} setError={setError}/>
 			{receivedData && receivedData.map(review => {

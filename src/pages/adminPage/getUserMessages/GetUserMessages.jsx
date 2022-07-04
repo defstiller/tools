@@ -17,7 +17,7 @@ function GetUserMessages() {
 		getData("messages");
 	}, []);
 	return (
-		<div className={styles.messagesDiv}>
+		<div className={styles.messagesDiv} data-testid="userMessages">
 			<LoadingModal loading={loading}/>
 			<Modal response={response} delay={2000} error={error} setResponse={setResponse} setError={setError}/>
 			{receivedData && receivedData.map(message => {
