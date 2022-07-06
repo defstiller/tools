@@ -13,7 +13,7 @@ function DropDown() {
 	const {width} = useContext(ScreenResizeContext);
 	function handleSignOut() {
 		signOut(auth).then(() => {
-			// Sign-out successful.
+			auth.currentUser = null;
 			console.log("signed out");
 		}).catch((error) => {
 			// An error happened.
