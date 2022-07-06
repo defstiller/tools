@@ -29,8 +29,8 @@ describe("Modal works as expected with response set to true", () => {
 });
 describe("Modal works as expected with error set to true", () => { 
 	let error;
-	let delay = 500;
-	let customErrorDelay = 500;
+	let delay = 100;
+	let customErrorDelay = 100;
 	let main;
 	const setError = jest.fn();
 	beforeEach(() => {
@@ -157,5 +157,5 @@ describe("Modal close button", () => {
 		userEvent.click(closeBtn); 
 		expect(setData).toBeCalledTimes(1);
 		expect(setData).toHaveBeenCalledWith(null); 
-	});
+	}); 
 }); 
