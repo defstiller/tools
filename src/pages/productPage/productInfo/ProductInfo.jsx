@@ -13,7 +13,7 @@ import StarRating from "../../../components/productCard/starRating/StarRating";
 
 function ProductInfo() {
 	const params = useParams();
-	const {loading, error, response, receivedData, addData, getData} = useAddGetRemoveData();
+	const {loading, receivedData, getData} = useAddGetRemoveData();
 	const [product, setProduct] = useState();
 	const [averageRating, setAverageRating] = useState(0);
 	useEffect(() => {
@@ -29,10 +29,9 @@ function ProductInfo() {
 	},[receivedData]);
 	return (
 		<>
-			<HeaderLayout />
 			<LoadingModal loading={loading} />
 			{product && <>
-				<main className={styles.main}>
+				<main className={styles.main} data-testid="productMain">
 					<figure>
 						<ImageWithFallback src={product.imgUrl} />
 					</figure>
