@@ -17,16 +17,6 @@ function ProductReviews(props) {
 		userId: null,
 		userEmail: null
 	});
-	useEffect(() => {
-		if(auth.currentUser) {
-			const userId = auth.currentUser.uid;
-			const userEmail = auth.currentUser.email;
-			setUserData({
-				userId,
-				userEmail
-			});
-		}
-	}, []);
 	const ratingsAndUids = useRef({
 		userUidsArray: [],
 		ratings: []
@@ -50,6 +40,21 @@ function ProductReviews(props) {
 		};
 		addData("reviews", dataToPost);
 	}
+	useEffect(() => {
+		if(auth.currentUser) {
+			const userId = auth.currentUser.uid;
+			const userEmail = auth.currentUser.email;
+			setUserData({
+				userId,
+				userEmail
+			});
+		} else {
+			setUserData({
+				userId: null,
+				userEmail: null
+			});
+		}
+	}, [auth.currentUser]);
 	useEffect(() => { 
 		getData("reviews");
 	}, [response]);
@@ -84,7 +89,7 @@ function ProductReviews(props) {
 				{reviews.length ? <p>REVIEWS</p> : <p>No reviews found</p>}
 				{reviews && reviews.map(review => {
 					return (
-						<div key={review.id} className={styles.reviewDiv}>
+						<div key={review.id} className={styles.reviewDiv} data-testid="reviews">
 							<div>
 								<p>Commented by: {review.leftByEmail}</p>
 								<p>{review.dateReviewLeft}</p>
@@ -106,6 +111,7 @@ function ProductReviews(props) {
 				ratingsAndUids={ratingsAndUids}	
 				userData={userData}
 				styles={styles}
+				data-testid="reviewForm"
 			/>}
 		</div>
 	);
