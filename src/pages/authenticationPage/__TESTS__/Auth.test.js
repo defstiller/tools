@@ -25,7 +25,7 @@ jest.mock("firebase/auth", () => {
 const width = {width: 1000};
 const isUser = false;
 const setIsUser = jest.fn();
-describe("Sign up page renders correct info", () => { 
+describe("Sign in page renders correct info", () => { 
 	beforeEach(() => {
 		render(
 			<ScreenResizeContext.Provider value={width}>  
@@ -37,9 +37,64 @@ describe("Sign up page renders correct info", () => {
 			</ScreenResizeContext.Provider>
 		); 
 	});
-	test("Sign up text is visible", () => {
+	test("Sign in text is visible", () => {
 		const text = screen.queryByRole("heading", {
-			name: /sign up/i
+			name: /sign in/i
+		});
+		expect(text).toBeVisible();
+	}); 
+	
+	test("Email field is present", () => {
+		const textbox = screen.queryByRole("textbox", {
+			placeholder: "email"
+		});
+		expect(textbox).toBeVisible();
+	}); 
+	test("Password field is present", () => {
+		const textbox = screen.queryByRole("textbox", {
+			placeholder: "password"
+		});
+		expect(textbox).toBeVisible();
+	}); 
+	test("Submit button is present", () => {
+		const button = screen.queryByRole("button", {
+			name: /submit/i
+		});
+		expect(button).toBeVisible();
+	}); 
+	test("Register Instead button is present", () => {
+		const button = screen.queryByRole("button", {
+			name: /Register Instead/i
+		});
+		expect(button).toBeVisible(); 
+	}); 
+	test("Admin info is visible", () => {
+		const text = screen.queryByTestId("adminInfo");
+		expect(text).toBeVisible();
+	}); 
+
+}); 
+
+describe("Register page renders correct info", () => { 
+	beforeEach(() => {
+		render(
+			<ScreenResizeContext.Provider value={width}>  
+				<AuthContext.Provider value={{isUser, setIsUser}}> 
+					<Router>
+						<Auth /> 
+					</Router>
+				</AuthContext.Provider>
+			</ScreenResizeContext.Provider>
+		); 
+		const button = screen.queryByRole("button", {
+			name: /Register Instead/i
+		});
+		userEvent.click(button);
+
+	});
+	test("Log in text is visible", () => {
+		const text = screen.queryByRole("heading", {
+			name: /Sign up/i
 		});
 		expect(text).toBeVisible();
 	}); 
@@ -64,62 +119,7 @@ describe("Sign up page renders correct info", () => {
 	}); 
 	test("Already registered button is present", () => {
 		const button = screen.queryByRole("button", {
-			name: /already registered\?/i
-		});
-		expect(button).toBeVisible();
-	}); 
-	test("Admin info is visible", () => {
-		const text = screen.queryByTestId("adminInfo");
-		expect(text).toBeVisible();
-	}); 
-
-}); 
-
-describe("Already registered page renders correct info", () => { 
-	beforeEach(() => {
-		render(
-			<ScreenResizeContext.Provider value={width}>  
-				<AuthContext.Provider value={{isUser, setIsUser}}> 
-					<Router>
-						<Auth /> 
-					</Router>
-				</AuthContext.Provider>
-			</ScreenResizeContext.Provider>
-		); 
-		const button = screen.queryByRole("button", {
-			name: /already registered\?/i
-		});
-		userEvent.click(button);
-
-	});
-	test("Log in text is visible", () => {
-		const text = screen.queryByRole("heading", {
-			name: /log in/i
-		});
-		expect(text).toBeVisible();
-	}); 
-	
-	test("Email field is present", () => {
-		const textbox = screen.queryByRole("textbox", {
-			placeholder: "email"
-		});
-		expect(textbox).toBeVisible();
-	}); 
-	test("Password field is present", () => {
-		const textbox = screen.queryByRole("textbox", {
-			placeholder: "password"
-		});
-		expect(textbox).toBeVisible();
-	}); 
-	test("Submit button is present", () => {
-		const button = screen.queryByRole("button", {
-			name: /submit/i
-		});
-		expect(button).toBeVisible();
-	}); 
-	test("Register instead button is present", () => {
-		const button = screen.queryByRole("button", {
-			name: /register instead/i
+			name: /Already registered\?/i
 		});
 		expect(button).toBeVisible();
 	}); 

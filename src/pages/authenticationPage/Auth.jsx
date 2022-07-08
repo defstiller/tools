@@ -13,7 +13,7 @@ function Auth() {
 	const auth = getAuth();
 	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState(false);
-	const [isRegister, setIsRegister] = useState(true);
+	const [isRegister, setIsRegister] = useState(false);
 	const [authInfo, setAuthInfo] = useState({
 		email: "",
 		password: ""
@@ -58,7 +58,7 @@ function Auth() {
 				{isRegister ?
 					<h1>Sign up</h1>
 					:
-					<h1>Log in</h1>
+					<h1>Sign in</h1>
 				}
 				<form className={styles.form}
 					onSubmit={(event) => {
