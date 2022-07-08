@@ -16,7 +16,7 @@ function Modal(props) {
 			setIsModal(true);
 			const timer = setTimeout(() => {
 				setIsModal(false);
-				setResponse(null);
+				setResponse && setResponse(null);
 			}, delay);
 			return () => clearTimeout(timer);
 		}
@@ -32,7 +32,8 @@ function Modal(props) {
 	}, [response, error]);
 	function handleCloseModalClick() {
 		if(error) {setError(null);}
-		if(response) {setResponse(null);}
+		if(response) {
+			setResponse && setResponse(null);}
 		setIsModal(false);
 	}
 	if(isModal) {
