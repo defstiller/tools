@@ -2,12 +2,14 @@ import React, {useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import { useCart } from "react-use-cart";
 import Modal from "../../components/modal/Modal";
+import { useNavigate } from "react-router-dom";
 function PayPal(props) {
 	const {subtotal, description, styles} = props;
 	const [paid, setPaid] = useState(false);
 	const [error, setError] = useState(null);
 	const payPalRef = useRef();
 	const { emptyCart } = useCart();
+	const navigate = useNavigate();
 	useEffect(() => {
 		if(subtotal && description) {
 			window.paypal
@@ -28,12 +30,10 @@ function PayPal(props) {
 					},
 					onApprove: async (data, actions) => {
 						const order = await actions.order.capture();
-						setPaid(true);
-						console.log(order);
+						setPaid(order);
 					},
 					onError: (err) => {
-					//   setError(err),
-						console.error(err);
+						setError(err)
 					},
 				})
 				.render(payPalRef.current);
@@ -42,17 +42,24 @@ function PayPal(props) {
 
 	if (paid) {
 		emptyCart();
-		return <div>Payment successful.!</div>;
+		const timer = setTimeout(() => {
+			navigate("/tools/shop");
+		}, 4000);
+		() => clearTimeout(timer);
+		return <Modal 
+			response={"Payment Successful, redirecting to shop page"}
+			delay={4000}/>;
 	}
 	
 	// If any error occurs
 	if (error) {
-		return <div>Error Occurred in processing payment.! Please try again.</div>;
+		return <Modal 
+			response={error.message}
+			delay={6000}/>;
 	}
 	
 	// Default Render
 	return <>
-		<Modal response delay={3000} error setError setResponse />
 		<div className={styles.totalDiv}>
 			<section>
 				<h4>Total Amount in USD. : {subtotal}</h4>
