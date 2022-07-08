@@ -15,7 +15,7 @@ function useHandleInputChange() {
 		});
 
 	}
-	return {defaultInput, objectInput, input};
+	return {defaultInput, objectInput, input, setInput};
 }
 
 export default useHandleInputChange;
