@@ -12,16 +12,16 @@ import styles from "./productInfo.module.css";
 import StarRating from "../../../components/productCard/starRating/StarRating";
 
 function ProductInfo() {
-	const params = useParams();
+	const {id} = useParams();
 	const {loading, receivedData, getData} = useAddGetRemoveData();
 	const [product, setProduct] = useState();
-	const [averageRating, setAverageRating] = useState(0);
+	const [averageRating, setAverageRating] = useState(null);
 	useEffect(() => {
 		getData("products");
 	}, []);
 	useEffect(() => {
 		receivedData && receivedData.map(data => {
-			if(data.id === params.id) {
+			if(data.id === id) {
 				setProduct(data);
 			}
 			return;
@@ -30,23 +30,25 @@ function ProductInfo() {
 	return (
 		<>
 			<LoadingModal loading={loading} />
-			{product && <>
+			{product ? <>
 				<main className={styles.main} data-testid="productMain">
 					<figure>
-						<ImageWithFallback src={product.imgUrl} />
+						<ImageWithFallback src={product.imgUrl} data-testid="productImage"/>
 					</figure>
 					<div>
-						<h1>{product.name}</h1>
+						<h1 data-testid="productName">{product.name}</h1>
 						<StarRating width="1em" rating={averageRating}/>
-						<p className={styles.price}>${product.price}</p>
-						<p className={styles.description}>{product.description}</p>
+						<p className={styles.price} data-testid="price">${product.price}</p>
+						<p className={styles.description} data-testid="description">{product.description}</p>
 						<AddToCart product={product} styles={styles}/>
 					</div>
 				</main>
 				<section>
-					<ProductReviews productDocId={product.docId} setAverageRating={setAverageRating} />
+					<ProductReviews productDocId={product.docId} setAverageRating={setAverageRating} data-testid="reviews"/>
 				</section>
-			</>}
+			</>
+				:
+				<h1>Product not found</h1>}
 		</>
 	);
 }
