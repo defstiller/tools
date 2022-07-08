@@ -57,7 +57,7 @@ function Cart() {
 	
 	if (isEmpty) return <>
 		<HeaderLayout />
-		<p>Your cart is empty</p>;
+		<p>Your cart is empty</p>
 	</>;
 	return <>
 		<HeaderLayout />
