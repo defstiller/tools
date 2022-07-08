@@ -31,7 +31,7 @@ function ProductList(props) {
 	function productPagination() {
 		previousButton.current.disabled = true;
 		nextButton.current.disabled = true;
-		const productsPerPage = 10;
+		const productsPerPage = 12;
 		const firstPageIndex = (currentPage - 1) * productsPerPage;
 		const lastPageIndex = firstPageIndex + productsPerPage;
 		if(filteredData[firstPageIndex - 1]) {
