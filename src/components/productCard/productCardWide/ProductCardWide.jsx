@@ -14,7 +14,7 @@ function ProductCardWide(props) {
 		<article className={classes.cardArticle}>
 			<img src={product.imgUrl}  onClick={() => handleProductClick(product)} className={classes.productImg}/>
 			<div className={classes.infoDiv}>
-				<p>{product.name}</p>
+				<Link to={`/tools/shop/${product.id}`}>{product.name}</Link>
 				<p>{product.description}</p>
 				<p>Price: ${product.price}</p>
 				<p>
