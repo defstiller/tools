@@ -31,7 +31,8 @@ function CheckoutPage() {
 	},[items]);
 	return <main>
 		<h1>Checkout</h1>
-		<button onClick={() => navigate("/tools/shop")}>Go back to Shop page</button>
+		<button onClick={() => navigate("/tools/shop")}>Back to Shop page</button>
+		<button onClick={() => navigate("/tools/cart")}>Back to Cart</button>
 
 		<ul className={styles.list}>
 			{items.map( product => (
