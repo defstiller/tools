@@ -16,6 +16,7 @@ function ReviewForm(props) {
 						value={input.rating || ""} 
 						onChange={objectInput}
 						className={styles.rating}
+						required
 					/>
 					<br />
 					<textarea 
@@ -24,6 +25,7 @@ function ReviewForm(props) {
 						value={input.comment || ""} 
 						onChange={objectInput}
 						className={styles.comment}
+						required
 					/>
 					<br />
 					<button type="submit">
