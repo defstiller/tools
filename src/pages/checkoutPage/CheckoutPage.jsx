@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import { useCart } from "react-use-cart";
+import { useNavigate } from "react-router-dom";
 
 import {AuthContext} from "../../context/context";
 
@@ -11,6 +12,7 @@ function CheckoutPage() {
 	const {isUser} = useContext(AuthContext);
 	const { items } = useCart();
 	const [subtotal, setSubTotal] = useState(0);
+	const navigate = useNavigate();
 
 	const initialOptions = {
 		"client-id": "Afp8TCWSmhfuz4HD-Ba4V6Qr3Sizb6yYr6gahuKwRr3SBJAhFc2NGe8Or_J0No4xit4ncVL0xY9zj-DS",
@@ -29,6 +31,7 @@ function CheckoutPage() {
 	},[items]);
 	return <main>
 		<h1>Checkout</h1>
+		<button onClick={() => navigate("/tools/shop")}>Go back to Shop page</button>
 
 		<ul className={styles.list}>
 			{items.map( product => (
