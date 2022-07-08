@@ -48,7 +48,7 @@ function ProductInfo() {
 				</section>
 			</>
 				:
-				<h1>Product not found</h1>}
+				loading || <h1>Product not found</h1>}
 		</>
 	);
 }
