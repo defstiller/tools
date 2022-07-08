@@ -20,10 +20,14 @@
 	width: 12vw;
 	object-fit: cover;
 }
+.productImg:hover {
+	cursor: pointer;
+}
 .infoDiv {
 	margin: 4vh 2vw;
 }
-.infoDiv > p:first-child {
+.infoDiv > a {
 	font-size: 1.5rem;
 	font-weight: 700;
+	text-decoration: none;
 }
