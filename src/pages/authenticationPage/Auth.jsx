@@ -36,7 +36,7 @@ function Auth() {
 		// https://firebase.google.com/docs/reference/js/firebase.User
 			// const uid = user.uid;
 			const timer = setTimeout(() => {
-				navigate("tools/shop");
+				navigate("/tools/shop");
 			}, 2000);
 			return () => clearTimeout(timer);
 		
