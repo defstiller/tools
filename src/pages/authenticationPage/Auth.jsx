@@ -70,14 +70,16 @@ function Auth() {
 						type="email"
 						value={authInfo.email} 
 						autoComplete="username"
-						onChange={handleChange}/>
+						onChange={handleChange}
+						required/>
 					<input 
 						placeholder="password" 
 						name="password" 
 						type="password"
 						value={authInfo.password} 
 						autoComplete="current-password"
-						onChange={handleChange}/>
+						onChange={handleChange}
+						required/>
 					<button type="submit" disabled={isLoading}>Submit</button>
 				</form >
 				{isRegister ?
