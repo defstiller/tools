@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import { useCart } from "react-use-cart";
+import Modal from "../../components/modal/Modal";
 function PayPal(props) {
 	const {subtotal, description, styles} = props;
 	const [paid, setPaid] = useState(false);
@@ -50,14 +51,15 @@ function PayPal(props) {
 	}
 	
 	// Default Render
-	return (
+	return <>
+		<Modal response delay={3000} error setError setResponse />
 		<div className={styles.totalDiv}>
 			<section>
 				<h4>Total Amount in USD. : {subtotal}</h4>
 				<div ref={payPalRef} />
 			</section>
 		</div>
-	)
+	</>;
 }
 PayPal.propTypes = {
 	subtotal: PropTypes.any,
