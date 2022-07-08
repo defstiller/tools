@@ -5,12 +5,9 @@ import { useNavigate, Link} from "react-router-dom";
 import HeaderLayout from "../../components/header/HeaderLayout";
 import ProductCardWide from "../../components/productCard/productCardWide/ProductCardWide";
 
-import {AuthContext} from "../../context/context";
-
 import styles from "./cart.module.css";
 
 function Cart() {
-	const {isUser} = useContext(AuthContext); 
 
 	const navigate = useNavigate();
 	const {
