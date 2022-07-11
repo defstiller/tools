@@ -6,11 +6,19 @@ This website is work in progress, and will stay this way for years to come, whil
 I hope one day to turn this tiny website into a colossus web application, which will be able to compete in features and security with giants like Amazon, only then I might feel like this application is finished.
 
 ### Features ###
-Simple shop application, with ability to..
-> Navigate to.. --> Home, Shop, About, Contact, Cart, Admin, Checkout, Sign in/up
+** Simple shop application, with ability to.. **
+Navigate to.. --> 
+	Home, 
+	Shop, 
+	About, 
+	Contact, 
+	Cart, 
+	Admin, 
+	Checkout, 
+	Sign in/up
 
 > Current Features -->
-> Regular User 
+	>> Regular User 
 	Ability to sign in/up with FireBase
 	
 	Add / Remove items to/from cart
