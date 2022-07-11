@@ -6,7 +6,7 @@ This website is work in progress, and will stay this way for years to come, whil
 I hope one day to turn this tiny website into a colossus web application, which will be able to compete in features and security with giants like Amazon, only then I might feel like this application is finished.
 
 ### Features ###
-** Simple shop application, with ability to.. **
+**Simple shop application, with ability to..**
 Navigate to.. --> 
 	Home, 
 	Shop, 
