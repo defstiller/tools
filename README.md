@@ -17,8 +17,8 @@ Navigate to.. -->
 	Checkout, 
 	Sign in/up
 
-> Current Features -->
-	>> Regular User 
+**Current Features -->**
+	Regular User
 	Ability to sign in/up with FireBase
 	
 	Add / Remove items to/from cart
@@ -37,7 +37,7 @@ Navigate to.. -->
 
 	Shipping for items are calculated as 1 shipping price for unlimited amount of similar items
 
-> Admin User ( Need to sign in using admin credentials, which are provided in sign in section, admin credentials are checked on server (Server has list of FireBase account IDs which are allowed to request / add certain data ), and do not depend on "isAdmin" etc in user object )
+**Admin User ( Need to sign in using admin credentials, which are provided in sign in section, admin credentials are checked on server (Server has list of FireBase account IDs which are allowed to request / add certain data ), and do not depend on "isAdmin" etc in user object )**
 
 	For now even not signed in user can see most of this information, as I did not prioritize it, since admin account is given away to anyone :)
 	Add Product : Anyone can see, admin can add
