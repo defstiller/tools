@@ -49,7 +49,7 @@ Navigate to..
 	Reviews: Anyone can see, admin can remove
 
 	Admin page >
-		Add Product > Ability to add product to database
+		Add Product > Ability to add product to database ( Do not worry about providing random image url, if application will not be able to find / load the image it will use fallback "Linked image not found" image )
 
 		Product List > Ability to see and remove items from database, not counting default items. Default items are checked on both server and client side, and cannot be removed by anyone
 
