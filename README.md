@@ -2,7 +2,7 @@ ToolsPros
 
 ### Description ###
 I have started this website in order to learn React.js and testing, this is the reason you might notice different styles of coding in some portions of the application.
-This website is work in progress, and will stay this way for years to come, while I learn new technologies, and improve my coding skills.
+This application is work in progress, and will stay this way for years to come, while I learn new technologies, and improve my coding skills.
 I hope one day to turn this tiny website into a colossus web application, which will be able to compete in features and security with giants like Amazon, only then I might feel like this application is finished.
 
 ### Features ###
