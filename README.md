@@ -7,7 +7,7 @@ I hope one day to turn this tiny website into a colossus web application, which 
 
 ### Features ###
 **Simple shop application, with ability to..**
-Navigate to.. --> 
+Navigate to..
 	Home, 
 	Shop, 
 	About, 
@@ -17,7 +17,7 @@ Navigate to.. -->
 	Checkout, 
 	Sign in/up
 
-**Current Features -->**
+**Current Features**
 	Regular User
 	Ability to sign in/up with FireBase
 	
