@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import styles from "../defaultStyles.module.css";
 const EmptyStarSvg = (props) => (
 	<svg className={styles.svgIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" {...props}>

@@ -2,7 +2,7 @@ import {useState} from "react";
 
 import {getDocs, collection, addDoc, doc, deleteDoc} from "firebase/firestore/lite";
 import {db} from "../firebaseConfig";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 function useAddGetRemoveData() {
 	const [loading, setLoading] = useState(false);

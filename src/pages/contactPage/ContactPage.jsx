@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 
 import HeaderLayout from "../../components/header/HeaderLayout";
 import Modal from "../../components/modal/Modal";

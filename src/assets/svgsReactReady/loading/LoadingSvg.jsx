@@ -12,4 +12,4 @@ function LoadingSvg(props){ // not svg, decided not to create separate folder to
 
 }
 
-export default LoadingSvg
+export default LoadingSvg;

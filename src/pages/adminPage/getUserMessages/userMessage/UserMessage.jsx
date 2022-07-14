@@ -13,7 +13,7 @@ function UserMessage(props) {
 			<p data-testid="message">Message: {message || "message is missing, check form validation"}</p>
 			<button onClick={() => removeData("messages", docId)} disabled={loading}>Remove message from data base</button>
 		</article>
-	)
+	);
 }
 UserMessage.propTypes = {
 	userMessage: PropTypes.object,
