@@ -78,9 +78,6 @@
 .changeAmountBtns button {
 	width: 2vw;
 }
-.changeAmountBtns > button {
-	width: 60%;
-}
 .cartBtn{
 	height: 2rem;
 	border: 1px solid rgba(0, 0, 0, 0.356);
