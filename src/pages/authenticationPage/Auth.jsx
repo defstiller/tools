@@ -90,7 +90,7 @@ function Auth() {
 				<p data-testid="adminInfo">For admin account use <br/>email: admin@gmail.com <br/> password: easyAdmin123</p>
 			</div>
 		</main>
-	</>
+	</>;
 
 
 }

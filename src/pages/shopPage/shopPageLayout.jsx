@@ -7,17 +7,19 @@ import HeaderLayout from "../../components/header/HeaderLayout";
 const SearchBar = lazy (() => import ("./products/SearchBar"));
 const FeaturedProducts = lazy (() => import ("./featuredProducts/FeaturedProducts"));
 import Loading from "../../assets/svgsReactReady/loading/LoadingSvg";
+import Modal from "../../components/modal/Modal";
 
 function ShopPageLayout() {
 
-	const {loading, error, receivedData, getData} = useAddGetRemoveData();
+	const {loading, error, receivedData, getData, setError} = useAddGetRemoveData();
 	useEffect(() => {
 		getData("products");
 	}, []);
 	return(
 		<ProductDataContext.Provider value={{
-			loading, error, receivedData
+			loading, error, receivedData, setError
 		}}>
+			<Modal error={error} setError={setError} />
 			<HeaderLayout />
 			<Suspense fallback={<Loading />}>
 				<FeaturedProducts />

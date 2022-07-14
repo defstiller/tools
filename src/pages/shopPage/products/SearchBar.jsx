@@ -7,7 +7,7 @@ import ProductList from "./productList/ProductList";
 import LoadingModal from "../../../components/modal/loadingModal/LoadingModal";
 
 function SearchBar() {
-	const {receivedData, loading, error} = useContext(ProductDataContext);
+	const {receivedData, loading} = useContext(ProductDataContext);
 	const [input, setInput] = useState("");
 	const defferedInput = useDeferredValue(input);
 	const [filteredData, setFilteredData] = useState([]);

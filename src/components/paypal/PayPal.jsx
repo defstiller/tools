@@ -33,7 +33,7 @@ function PayPal(props) {
 						setPaid(order);
 					},
 					onError: (err) => {
-						setError(err)
+						setError(err);
 					},
 				})
 				.render(payPalRef.current);

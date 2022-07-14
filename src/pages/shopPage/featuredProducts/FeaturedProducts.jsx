@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 import classes from "./featuredProducts.module.css";
 import {ProductDataContext, ScreenResizeContext} from "../../../context/context";
 
-function FeaturedProducts({data}) {
-	const {receivedData, loading, error} = useContext(ProductDataContext);
+function FeaturedProducts() {
+	const {receivedData, loading} = useContext(ProductDataContext);
 	const {width} = useContext(ScreenResizeContext);
 	const [featuredProducts, setFeaturedProducts] = useState([]);
 	const [slides, setSlides] = useState(3);

@@ -34,7 +34,7 @@ function ReviewForm(props) {
 				</form>
 			</aside>		
 		);
-}
+	}
 }
 ReviewForm.propTypes = {
 	handleReviewSubmit: PropTypes.any,

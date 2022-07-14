@@ -11,7 +11,7 @@ const CartButtonSvg = (props) => {
 			</svg>
 		</button>
 
-	)
+	);
 };
   
 export default CartButtonSvg;
