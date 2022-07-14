@@ -5,9 +5,10 @@ import {ProductDataContext} from "../../../context/context";
 
 import ProductList from "./productList/ProductList";
 import LoadingModal from "../../../components/modal/loadingModal/LoadingModal";
+import Modal from "../../../components/modal/Modal";
 
 function SearchBar() {
-	const {receivedData, loading, error} = useContext(ProductDataContext);
+	const {receivedData, loading, error, setError} = useContext(ProductDataContext);
 	const [input, setInput] = useState("");
 	const defferedInput = useDeferredValue(input);
 	const [filteredData, setFilteredData] = useState([]);
@@ -37,6 +38,7 @@ function SearchBar() {
 
 	return(
 		<div className={classes.searchBarDiv}>
+			<Modal error={error} setError={setError} />
 			<LoadingModal loading={loading} />
 			<h1>Best products on the market</h1>
 			<form>

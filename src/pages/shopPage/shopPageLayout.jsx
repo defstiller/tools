@@ -10,13 +10,13 @@ import Loading from "../../assets/svgsReactReady/loading/LoadingSvg";
 
 function ShopPageLayout() {
 
-	const {loading, error, receivedData, getData} = useAddGetRemoveData();
+	const {loading, error, receivedData, getData, setError} = useAddGetRemoveData();
 	useEffect(() => {
 		getData("products");
 	}, []);
 	return(
 		<ProductDataContext.Provider value={{
-			loading, error, receivedData
+			loading, error, receivedData, setError
 		}}>
 			<HeaderLayout />
 			<Suspense fallback={<Loading />}>
