@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
 import useAddGetRemoveData from "../../../logic/firebaseLogic/firebaseDB/useAddGetRemoveData";
-import HeaderLayout from "../../../components/header/HeaderLayout";
 import ProductReviews from "./productReviews/ProductReviews";
 import AddToCart from "../../../components/addToCart/AddToCart";
 import ImageWithFallback from "../../../components/imageWithFallback/ImageWithFallback";
