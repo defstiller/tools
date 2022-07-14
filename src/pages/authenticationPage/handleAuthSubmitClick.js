@@ -1,4 +1,3 @@
-import React from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 function handleAuthSubmitClick(
 	event, 
@@ -31,7 +30,7 @@ function handleAuthSubmitClick(
 			.then((userCredential) => {
 				// Signed in 
 				const user = userCredential.user;
-				setResponse("Succesfully logged in, reddirecting to shop page.");
+				setResponse(`Succesfully logged in as ${user.email}, reddirecting to shop page.`);
 
 				// ...
 			})
