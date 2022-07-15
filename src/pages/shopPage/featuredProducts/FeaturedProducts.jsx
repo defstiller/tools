@@ -59,7 +59,7 @@ function FeaturedProducts() {
 							key={product.id}
 						>
 							<figure className={classes.figure}>
-								<img src={product.imgUrl} />
+								<img src={product.imgUrl} alt={product.name}/>
 								<figcaption>{product.name}</figcaption>
 							</figure>
 						</Link>);
