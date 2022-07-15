@@ -33,4 +33,7 @@ safetyGlasses - https://www.amazon.com/Glasses-Protective-Goggles-Resistant-Prot
 spillKit - https://www.amazon.com/Oil-Dri-Universal-5-Gallon-Absorption-Capacity/dp/B0000AX0PV/ref=sr_1_3?crid=1M48IFZ8RZUYE&keywords=spill+kit&qid=1654298805&sprefix=spill+kit%2Caps%2C107&sr=8-3
 
 
-Images are hosted on > https://freeimage.host/ <  previously on imgbox.com, but they do not support webm format
+Images are hosted on > https://freeimage.host/ <  previously on imgbox.com, but they do not support web format
+
+Home page video - https://www.pexels.com/@kelly-1179532/
+Videos are hosted on Tebi.io
