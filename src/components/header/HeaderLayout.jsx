@@ -15,16 +15,19 @@ function HeaderLayout() {
 	const {width} = useContext(ScreenResizeContext);
 	const [dropDown, setDropdown] = useState(false);
 	const headerDiv = useRef();
+
 	function handleDropdownClick() {
 		if(dropDown) {
 			setDropdown(false);
 		} else {
 			setDropdown(true);
+			const eventType = window.matchMedia("(any-pointer:coarse)").matches && "touchend" || "mouseout"; // find out if the user is using a mouse or a touch device
 			const div = headerDiv.current;
-			document.addEventListener("mouseout", function hideDropDown(event) {
+
+			document.addEventListener(eventType, function hideDropDown(event) { // hide the dropdown when the user clicks outside of it
 				if(div && !div.contains(event.target)){
 					setDropdown(false);
-					return document.removeEventListener("mouseout", hideDropDown);			
+					return document.removeEventListener(eventType, hideDropDown);			
 				}
 				return;
 			});
