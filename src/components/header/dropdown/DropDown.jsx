@@ -18,7 +18,6 @@ function DropDown() {
 			auth.currentUser = null;
 			setResponse("Signed out successfully");
 		}).catch((error) => {
-			// An error happened.
 			setResponse(error.message);
 		});
 	}
