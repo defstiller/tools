@@ -14,21 +14,24 @@ import styles from "./header.module.css";
 function HeaderLayout() {
 	const {width} = useContext(ScreenResizeContext);
 	const [dropDown, setDropdown] = useState(false);
-	const dropDownDiv = useRef();
-	useEffect(() => {
+	const headerDiv = useRef();
+	function handleDropdownClick() {
 		if(dropDown) {
-			const div = dropDownDiv.current;
-			document.addEventListener("mouseup", function hideDropDown(event) {
+			setDropdown(false);
+		} else {
+			setDropdown(true);
+			const div = headerDiv.current;
+			document.addEventListener("mouseout", function hideDropDown(event) {
 				if(div && !div.contains(event.target)){
 					setDropdown(false);
-				} 
-				return document.removeEventListener("mouseup", hideDropDown);			
+					return document.removeEventListener("mouseout", hideDropDown);			
+				}
+				return;
 			});
 		}
-		return;
-	}, [dropDown]);
+	}
 	
-	return <div className={styles.headerDiv}>
+	return <div className={styles.headerDiv} ref={headerDiv}>
 		<header className={styles.header}>
 			<Link 
 				to="/tools/" 
@@ -44,7 +47,7 @@ function HeaderLayout() {
 				<CartButtonSvg alt="cart button"/>
 			</Link>
 			<AccountSvg 
-				onClick={() => setDropdown(true)}
+				onClick={() => handleDropdownClick()}
 				role="button" 
 				aria-label="dropdown"
 			/>
@@ -52,7 +55,6 @@ function HeaderLayout() {
 		{dropDown && (
 			<div 
 				className={styles.dropDown}  
-				ref={dropDownDiv} 
 				data-testid="header-dropdown"
 			>
 				<DropDown width={width} styles={styles}/>
