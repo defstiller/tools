@@ -1,15 +1,13 @@
 .Tagline {
 	text-align: center;
-	position: relative;
-	top: 20vh;
+	margin-top: 20vh;
 }
 .Tagline h1 {
 	color: rgb(168, 255, 117);
 	font-size: 3.5em;
 }
 .Tagline p{
-	position: relative;
-	top: 7vh;
+	margin-top: 7vh;
 	color: rgba(168, 255, 117, 0.91);
 	border: none;
 	padding: 0 4vw 6vh 4vw;
@@ -21,4 +19,48 @@
 
 .Tagline h1, .Tagline p {
 	filter: drop-shadow(-2px 1px 2px rgb(0, 0, 0));
+}
+@media only screen and (min-width: 600px) and (max-width: 800px){
+	.Tagline {
+		margin-top: 10vh;
+	}
+	.Tagline p {
+		font-size: 1.4em;
+	}
+	.Tagline h1 {
+		font-size: 3em;
+	}
+}
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+	.Tagline {
+		margin-top: 10vh;
+	}
+	.Tagline p {
+		font-size: 1.2em;
+	}
+	.Tagline h1 {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (min-width: 200px) and (max-width: 400px){
+	.Tagline {
+		margin-top: 6vh;
+	}
+	.Tagline p {
+		font-size: 1em;
+	}
+	.Tagline h1 {
+		font-size: 2.5em;
+	}
+}
+@media only screen and (max-width: 200px) {
+	.Tagline {
+		margin-top: 2vh;
+	}
+	.Tagline p {
+		display: none;
+	}
+	.Tagline h1 {
+		font-size: 2.2em;
+	}
 }

@@ -1,6 +1,5 @@
 .buttonDiv {
-	position: relative;
-	top: 32vh;
+	margin-top: 5vh;
 	display: flex;
 	width: 100%;
 	justify-content: center;
@@ -16,4 +15,9 @@
 }
 .buttonDiv button:hover {
 	cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+	.buttonDiv button {
+		font-size: 1.5em;
+	}
 }

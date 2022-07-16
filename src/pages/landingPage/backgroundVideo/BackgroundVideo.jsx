@@ -25,7 +25,7 @@ function LandingPageVideo() {
 				playsInline
 				loop 
 				muted 
-				className={ classes.backgroundVid}
+				className={ classes.backgroundVid }
 				width="100%" 
 				height="100%"
 				ref={videoRef}
