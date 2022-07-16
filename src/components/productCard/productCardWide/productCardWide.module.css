@@ -31,3 +31,19 @@
 	font-weight: 700;
 	text-decoration: none;
 }
+@media only screen and (max-width:700px) {
+	.cardArticle {
+		flex-direction: column;
+		align-content: center;
+		margin-bottom: 2vh;
+	}
+	.productImg {
+		width: 100%;
+	}
+	.infoDiv {
+		margin: 2vh 0;
+	}
+	.description {
+		display: none;
+	}
+}
