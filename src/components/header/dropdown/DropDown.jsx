@@ -18,7 +18,6 @@ function DropDown() {
 			auth.currentUser = null;
 			setResponse("Signed out successfully");
 		}).catch((error) => {
-			// An error happened.
 			setResponse(error.message);
 		});
 	}
@@ -26,17 +25,19 @@ function DropDown() {
 		<>
 			<Modal response={response} delay={3000} setResponse={setResponse} />
 			{width < 575 && <NavBar styles={styles}/>}
-			<Link to="/tools/admin" name="admin">
-				<button>Admin Page</button>
-			</Link>
-			{isUser 
-				? <button onClick={() =>  handleSignOut()}
-				>Sign Out</button>
-				:
-				<Link to="/tools/auth" name="sign in">
-					<button>Sign in</button>
+			<div className={styles.dropDown}>
+				<Link to="/tools/admin" name="admin">
+					<button>Admin Page</button>
 				</Link>
-			}
+				{isUser 
+					? <button onClick={() =>  handleSignOut()}
+					>Sign Out</button>
+					:
+					<Link to="/tools/auth" name="sign in">
+						<button>Sign in</button>
+					</Link>
+				}
+			</div>
 		</>
 	);
 }
