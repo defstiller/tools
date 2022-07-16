@@ -32,3 +32,19 @@
 .toCheckout {
 	width: 100%;
 }
+@media only screen and (max-width:700px) {
+	.cartMainDiv {
+		display: block;
+	}
+	.main { 
+		width: 100%;
+	}
+	.main > h1 {
+		width: 100%;
+	}
+	.summaryDiv {
+		padding-left: 10%;
+		margin-bottom: 10%;
+		width: 80%;
+	}
+}
