@@ -29,7 +29,7 @@ function CheckoutPage() {
 		});
 		setSubTotal(total);
 	},[items]);
-	return <main>
+	return <main className={styles.mainDiv}>
 		<h1>Checkout</h1>
 		<button onClick={() => navigate("/tools/shop")}>Back to Shop page</button>
 		<button onClick={() => navigate("/tools/cart")}>Back to Cart</button>

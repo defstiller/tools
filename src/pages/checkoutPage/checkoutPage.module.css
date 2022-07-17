@@ -1,13 +1,35 @@
+.mainDiv > button {
+	width: 40%;
+	background-color: #ffc439;
+	border: none;
+	color: black;
+	padding: 1vh 2vw;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 5%;
+	cursor: pointer;
+}
 .list {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+}
+.list li {
+	list-style: none;
+	padding: 3%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 1%;
 }
 .totalDiv {
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 .totalDiv section {
 	width: 50%;
+}
+.totalDiv h4 {
+	font-size: 2em;
 }
