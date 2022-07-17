@@ -43,6 +43,13 @@ function Auth() {
 		// ...
 		}
 	});
+
+	function handleSignInAsAdminClick() {
+		setAuthInfo({
+			email: "admin@gmail.com",
+			password: "easyAdmin123"
+		});
+	}
 	return <>
 		<HeaderLayout />
 		<main className={styles.main}>
@@ -52,7 +59,7 @@ function Auth() {
 				error={error}
 				setResponse={setResponse}
 				setError={setError}
-				delay={5000}
+				delay={1900}
 			/>
 			<div className={styles.formDiv}>
 				{isRegister ?
@@ -82,12 +89,14 @@ function Auth() {
 						required/>
 					<button type="submit" disabled={isLoading}>Submit</button>
 				</form >
-				{isRegister ?
-					<button onClick={() => setIsRegister(false)}>Already registered?</button>
-					:
-					<button onClick={() => setIsRegister(true)}>Register Instead</button>
-				}
-				<p data-testid="adminInfo">For admin account use <br/>email: admin@gmail.com <br/> password: easyAdmin123</p>
+				<div className={styles.buttonDiv}>
+					{isRegister ?
+						<button onClick={() => setIsRegister(false)}>Already registered?</button>
+						:
+						<button onClick={() => setIsRegister(true)}>Register Instead</button>
+					}
+					<button onClick={() => handleSignInAsAdminClick()}>Use admin credentials</button>
+				</div>
 			</div>
 		</main>
 	</>;
