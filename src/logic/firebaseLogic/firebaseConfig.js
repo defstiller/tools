@@ -1,7 +1,7 @@
 import {getFirestore} from "firebase/firestore/lite";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
+import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
 	apiKey: "AIzaSyCk-fXi46NHIIym21R6Og8IVZkksj7ZEO0",
 	authDomain: "react-ef8b3.firebaseapp.com",
@@ -18,5 +18,5 @@ const main = initializeApp(firebaseConfig);
 const db = getFirestore(main);
 // Initialize Auth
 const auth = getAuth(main);
-
-export {db, auth};
+const analytics = getAnalytics(main);
+export {db, auth, analytics};

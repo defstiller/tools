@@ -1,3 +1,6 @@
+.mainDiv {
+	text-align: center;
+}
 .mainDiv > button {
 	width: 40%;
 	background-color: #ffc439;
@@ -32,4 +35,16 @@
 }
 .totalDiv h4 {
 	font-size: 2em;
+}
+@media only screen and (max-width:450px) {
+	.list {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.totalDiv h4 {
+		font-size: 1.5em;
+	}
+	.mainDiv > button {
+		width: 90%;
+		margin: 1vh 5%;
+	}
 }
