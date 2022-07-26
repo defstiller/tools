@@ -23,8 +23,8 @@ function ReviewForm(props) {
 						placeholder="comment" 
 						name="comment" 
 						value={input.comment || ""} 
-						onChange={objectInput}
 						className={styles.comment}
+						onChange={objectInput}
 						required
 					/>
 					<br />
@@ -37,12 +37,15 @@ function ReviewForm(props) {
 	}
 }
 ReviewForm.propTypes = {
-	handleReviewSubmit: PropTypes.any,
-	input: PropTypes.any,
-	objectInput: PropTypes.any,
-	styles: PropTypes.any,
-	ratingsAndUids: PropTypes.any,
-	userData: PropTypes.any
+	handleReviewSubmit: PropTypes.func,
+	input: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.object
+	]),
+	objectInput: PropTypes.func,
+	styles: PropTypes.object,
+	ratingsAndUids: PropTypes.object,
+	userData: PropTypes.object
 };
 
 export default ReviewForm;
