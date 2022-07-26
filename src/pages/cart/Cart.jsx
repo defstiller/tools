@@ -62,6 +62,7 @@ function Cart() {
 	return <>
 		<HeaderLayout />
 		<div className={styles.cartMainDiv}>
+
 			<main className={styles.main}>
 				<h1>Shopping Cart ({totalUniqueItems})</h1>
 				<ul>
@@ -77,6 +78,7 @@ function Cart() {
 					))}
 				</ul>
 			</main>
+
 			<div className={styles.summaryDiv}>
 				<h1>Summary</h1>
 				<div>
@@ -97,6 +99,7 @@ function Cart() {
 					<button className={styles.toCheckout}>Proceed To Checkout</button>
 				</Link>
 			</div>
+			
 		</div>
 	</>;
 }

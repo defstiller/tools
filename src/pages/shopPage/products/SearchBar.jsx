@@ -21,7 +21,7 @@ function SearchBar() {
 	useMemo(() => {
 		if(defferedInput) {
 			let filteredArray = [];
-			receivedData.map( data => {
+			receivedData.forEach( data => {
 				const lowerInput = defferedInput.toLowerCase();
 				const name = data.name.toLowerCase();
 				if(name.includes(lowerInput)){

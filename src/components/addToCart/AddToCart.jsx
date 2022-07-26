@@ -34,9 +34,9 @@ function AddToCart(props) {
 	);
 }
 AddToCart.propTypes = {
-	product: PropTypes.any,
-	styles: PropTypes.any,
-	loading: PropTypes.bool
+	product: PropTypes.object,
+	styles: PropTypes.object,
+	loading: PropTypes.bool,
 };
 
 export default AddToCart;

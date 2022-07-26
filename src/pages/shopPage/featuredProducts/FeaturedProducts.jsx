@@ -24,7 +24,7 @@ function FeaturedProducts() {
 	useEffect(() =>{
 		if(!loading) {
 			const featuredArray = [];
-			receivedData.map(product => {
+			receivedData.forEach(product => {
 				if(product.isFeatured) {
 					featuredArray.push(product);
 					return;

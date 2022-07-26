@@ -15,7 +15,6 @@ function ContactPage() {
 		event.preventDefault();
 		addData("messages", input);
 	}
-
 	useEffect(() => {
 		if(response) {
 			setInput({
@@ -34,15 +33,46 @@ function ContactPage() {
 				delay={2000} 
 				error={error} 
 				setResponse={setResponse} 
-				setError={setError}/>
+				setError={setError}
+			/>
+
 			<main className={styles.main}>
 				<h1>Would you like to contact us?</h1>
 				<p>This form is for messages in admin section</p>
-				<form disabled={loading} onSubmit={handleSubmit}>
-					<input placeholder="Email" type="email" onChange={objectInput} value={input.email} name="email" required/>
-					<input placeholder="Name" type="text" onChange={objectInput} value={input.name} name="name" pattern="[a-zA-Z'-'\s]*" required />
-					<input placeholder="Subject" type="text" onChange={objectInput} value={input.subject} name="subject" required/>
-					<textarea placeholder="Message" type="text" onChange={objectInput} value={input.message} name="message" required/>
+				<form disabled={loading} onSubmit={handleSubmit} onChange={ event => objectInput(event) }>
+					<input 
+						placeholder="Email" 
+						type="email" 
+						value={input.email} 
+						name="email" 
+						required
+					/>
+
+					<input 
+						placeholder="Name" 
+						type="text" 
+						value={input.name} 
+						name="name" 
+						pattern="[a-zA-Z'-'\s]*" 
+						required 
+					/>
+			
+					<input 
+						placeholder="Subject" 
+						type="text"  
+						value={input.subject} 
+						name="subject" 
+						required
+					/>
+
+					<textarea 
+						placeholder="Message" 
+						type="text" 
+						value={input.message}
+						name="message" 
+						required
+					/>
+
 					<button type="submit">Submit</button>
 				</form>
 			</main>

@@ -118,7 +118,7 @@ function ProductReviews(props) {
 }
 ProductReviews.propTypes = {
 	productDocId: PropTypes.string,
-	setAverageRating: PropTypes.any
+	setAverageRating: PropTypes.func
 };
 
 export default ProductReviews;

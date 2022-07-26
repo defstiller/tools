@@ -69,9 +69,9 @@ function PayPal(props) {
 	</>;
 }
 PayPal.propTypes = {
-	subtotal: PropTypes.any,
-	description: PropTypes.any,
-	styles: PropTypes.any
+	subtotal: PropTypes.number,
+	description: PropTypes.string,
+	styles: PropTypes.object,
 };
 
 export default PayPal;
