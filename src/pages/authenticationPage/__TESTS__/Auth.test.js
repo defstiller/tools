@@ -1,9 +1,7 @@
 /* eslint-disable react/display-name */
 import React from "react";
 import {jest} from "@jest/globals";
-import { render, screen, shallow, find } from "@testing-library/react";
-import firebase from "firebase/app";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { render, screen } from "@testing-library/react";
 const mockgetAuth = jest.fn();
 const mockonAuthStateChanged = jest.fn();
 const mockhandleAuthSubmitClick = jest.fn(e => e.preventDefault());
@@ -11,7 +9,6 @@ import Auth from "../Auth";
 import { ScreenResizeContext, AuthContext } from "../../../context/context";
 import { MemoryRouter as Router } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import handleAuthSubmitClick from "../handleAuthSubmitClick";
 jest.mock("../handleAuthSubmitClick.js", () => (e) => {
 	e.preventDefault()
 	mockhandleAuthSubmitClick() 
@@ -69,7 +66,7 @@ describe("Sign in page renders correct info", () => {
 		expect(button).toBeVisible(); 
 	}); 
 	test("Admin info is visible", () => {
-		const text = screen.queryByTestId("adminInfo");
+		const text = screen.queryByText("Use admin credentials"); 
 		expect(text).toBeVisible();
 	}); 
 
@@ -124,7 +121,7 @@ describe("Register page renders correct info", () => {
 		expect(button).toBeVisible();
 	}); 
 	test("Admin info is visible", () => {
-		const text = screen.queryByTestId("adminInfo");
+		const text = screen.queryByText("Use admin credentials");
 		expect(text).toBeVisible();
 	}); 
 
