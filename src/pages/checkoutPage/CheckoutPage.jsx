@@ -29,23 +29,29 @@ function CheckoutPage() {
 		});
 		setSubTotal(total);
 	},[items]);
-	return <main className={styles.mainDiv}>
-		<h1>Checkout</h1>
-		<button onClick={() => navigate("/tools/shop")}>Back to Shop page</button>
-		<button onClick={() => navigate("/tools/cart")}>Back to Cart</button>
 
-		<ul className={styles.list}>
-			{items.map( product => (
-				<li key={product.id}>
-					<p>{product.name} x{product.quantity}</p>
-					<p>Price: ${product.price}</p>
-					<p>Shipping: ${product.shipping}</p>
-				</li>
-			))}
-		</ul>
-		<h3>For buyer account use <br/> email: asaturov0-buyer@gmail.com <br/> password: buyertest</h3>
-		<PayPal subtotal={subtotal} description="Order from ToolsPros" styles={styles}/>
-	</main>;
+	return	(
+		<main className={styles.mainDiv}>
+
+			<h1>Checkout</h1>
+			<button onClick={() => navigate("/tools/shop")}>Back to Shop page</button>
+			<button onClick={() => navigate("/tools/cart")}>Back to Cart</button>
+
+			<ul className={styles.list}>
+				{items.map( product => (
+					<li key={product.id}>
+						<p>{product.name} x{product.quantity}</p>
+						<p>Price: ${product.price}</p>
+						<p>Shipping: ${product.shipping}</p>
+					</li>
+				))}
+			</ul>
+			
+			<h3>For buyer account use <br/> email: asaturov0-buyer@gmail.com <br/> password: buyertest</h3>
+			<PayPal subtotal={subtotal} description="Order from ToolsPros" styles={styles}/>
+
+		</main>
+	);
 }
 
 export default CheckoutPage;

@@ -62,11 +62,13 @@ function Auth() {
 				delay={1900}
 			/>
 			<div className={styles.formDiv}>
+
 				{isRegister ?
 					<h1>Sign up</h1>
 					:
 					<h1>Sign in</h1>
 				}
+
 				<form className={styles.form}
 					onSubmit={(event) => {
 						handleAuthSubmitClick(event, authInfo, setIsLoading, isRegister, setResponse, setError, auth);
@@ -89,6 +91,7 @@ function Auth() {
 						required/>
 					<button type="submit" disabled={isLoading}>Submit</button>
 				</form >
+
 				<div className={styles.buttonDiv}>
 					{isRegister ?
 						<button onClick={() => setIsRegister(false)}>Already registered?</button>
@@ -97,6 +100,7 @@ function Auth() {
 					}
 					<button onClick={() => handleSignInAsAdminClick()}>Use admin credentials</button>
 				</div>
+				
 			</div>
 		</main>
 	</>;
