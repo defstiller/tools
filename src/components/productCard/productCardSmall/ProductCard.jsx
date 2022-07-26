@@ -27,14 +27,9 @@ function ProductCard(props) {
 	);
 }
 ProductCard.propTypes = {
-	product: PropTypes.any,
-	imgUrl: PropTypes.string,
-	cartArray: PropTypes.any,
-	setCartArray: PropTypes.any,
-	handleQuantityChange: PropTypes.any,
-	handleProductClick: PropTypes.any,
-	styles: PropTypes.any,
-	removeItem: PropTypes.any,
+	product: PropTypes.object,
+	handleProductClick: PropTypes.func,
+	styles: PropTypes.object,
 	children: PropTypes.any,
 	loading: PropTypes.bool
 };

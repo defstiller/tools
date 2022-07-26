@@ -54,13 +54,13 @@ function Modal(props) {
 	}
 }
 Modal.propTypes = {
-	props: PropTypes.any,
-	response: PropTypes.any,
-	delay: PropTypes.any,
-	error: PropTypes.any,
-	setError: PropTypes.any, 
-	setResponse: PropTypes.any,
-	customErrorDelay: PropTypes.any
+	props: PropTypes.object,
+	response: PropTypes.string,
+	delay: PropTypes.number,
+	error: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
+	setError: PropTypes.func, 
+	setResponse: PropTypes.func,
+	customErrorDelay: PropTypes.number,
 };
 
 export default Modal;

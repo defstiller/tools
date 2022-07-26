@@ -42,9 +42,9 @@ function DropDown() {
 	);
 }
 DropDown.propTypes = {
-	styles: PropTypes.any,
-	dropDown: PropTypes.any,
-	isUser: PropTypes.any
+	styles: PropTypes.object,
+	dropDown: PropTypes.object,
+	isUser: PropTypes.bool,
 };
 
 export default DropDown;

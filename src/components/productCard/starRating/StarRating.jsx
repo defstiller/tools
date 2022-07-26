@@ -37,8 +37,8 @@ function StarRating(props){
 	);
 }
 StarRating.propTypes = {
-	rating: PropTypes.any,
-	width: PropTypes.any
+	rating: PropTypes.number,
+	width: PropTypes.string
 };
 
 export default StarRating;

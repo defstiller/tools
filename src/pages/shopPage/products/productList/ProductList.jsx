@@ -52,7 +52,7 @@ function ProductList(props) {
 		setCurrentPage(1);
 	}, [filteredData]);
 
-	function handleProductClick(product) { //navigate user on click
+	function handleProductClick(product) {
 		const path = product.id;
 		navigate(path);
 	}
@@ -82,6 +82,6 @@ function ProductList(props) {
 	);
 }
 ProductList.propTypes = {
-	filteredData: PropTypes.any
+	filteredData: PropTypes.array
 };
 export default ProductList;
